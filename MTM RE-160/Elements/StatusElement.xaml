@@ -1,0 +1,41 @@
+﻿<UserControl x:Class="MTM_RE_160.Elements.StatusElement"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:MTM_RE_160.Elements"
+             mc:Ignorable="d" 
+             d:DesignHeight="182" d:DesignWidth="182"  Foreground="Black" Margin="10" SizeChanged="UserControl_SizeChanged">
+    <UserControl.Background>
+        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+            <GradientStop Color="#CC28CDCD" Offset="0.53"/>
+            <GradientStop Color="#99FFFFFF" Offset="1"/>
+            <GradientStop Color="#99FFFFFF"/>
+        </LinearGradientBrush>
+    </UserControl.Background>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="2*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+
+        </Grid.RowDefinitions>
+        <Image x:Name="imageStatus" Grid.Column="0"  Grid.Row="0" Source="/MTM RE-160;component/Resources/status/pause.png" />
+        <TextBlock x:Name="textBlockAddress"  Text="100" Grid.Column="1" Grid.ColumnSpan="2"  Grid.Row="0" VerticalAlignment="Center" TextAlignment="Center" FontWeight="Bold" Foreground="#FF4F4A4A"/>
+        <Image x:Name="imageAgain" Grid.RowSpan="2" Grid.Column="2"  Grid.Row="1" Source="/MTM RE-160;component/Resources/status/empty.png" MouseDown="imageAgain_MouseDown"/>
+        <TextBlock x:Name="textBlockFile"  Text="" Grid.Column="0" Grid.ColumnSpan="2"  Grid.Row="1" Grid.RowSpan="2" VerticalAlignment="Center" TextAlignment="Left" Margin="5" MouseDown="textBlockFile_MouseDown"/>
+        <TextBlock x:Name="textBlockStatus"  Text="Снимаем" Grid.Column="0" Grid.ColumnSpan="3"  Grid.Row="3"  VerticalAlignment="Center" Margin="5"/>
+        <ProgressBar Name="progressBar" Grid.Column="0" Grid.ColumnSpan="3"  Grid.Row="4" Margin="5" Foreground="#FFC0F96D"/>
+        <TextBlock x:Name="textBlockProgr"  Text="0%" Grid.Column="0" Grid.ColumnSpan="3"  Grid.Row="4"  VerticalAlignment="Center"  TextAlignment="Center"/>
+
+
+
+    </Grid>
+</UserControl>

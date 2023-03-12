@@ -1,0 +1,39 @@
+﻿<UserControl x:Class="MTM_RE_160.Panels.PanelCopy"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:MTM_RE_160.Panels"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+           
+        </Grid.RowDefinitions>
+        <Image Grid.RowSpan="4" Name="img" RenderTransformOrigin="0.5,0.5" Source="/MTM RE-160;component/Resources/search2.png" >
+            <Image.RenderTransform>
+                <RotateTransform x:Name="AnimatedRotateTransform" Angle="1" />
+            </Image.RenderTransform>
+            <Image.Triggers>
+                <EventTrigger RoutedEvent="FrameworkElement.Loaded" >
+                    <EventTrigger.Actions>
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <DoubleAnimation Storyboard.TargetName="AnimatedRotateTransform"
+                                 Storyboard.TargetProperty="Angle" 
+                                To="360" Duration="0:0:5" RepeatBehavior="Forever"  />
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger.Actions>
+                </EventTrigger>
+            </Image.Triggers>
+        </Image>
+        <TextBlock Grid.Row="1" Text="Копирование..." HorizontalAlignment="Center" VerticalAlignment="Center" TextAlignment="Center" Name="txtStatusCopy" FontWeight="Bold" Foreground="#FF98B9CD" MouseDown="txtStatusCopy_MouseDown"/>
+        <ProgressBar Grid.Row="2" Name="progress" VerticalAlignment="Center" Height="20" Margin="20" Foreground="#FF5BF3C3"/>
+        <TextBlock x:Name="textBlock" Grid.Row="2"  VerticalAlignment="Center" Height="15" Margin="20" Text="0.00%" TextAlignment="Center"/>
+
+    </Grid>
+</UserControl>
